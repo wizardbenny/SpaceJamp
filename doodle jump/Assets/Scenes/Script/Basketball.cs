@@ -22,9 +22,15 @@ public class Basketball : MonoBehaviour
     void Update()
     {
         ScreenWrap();
+        
+    }
+
+    private void FixedUpdate()
+    {
         float horiz = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(horiz * speed * Time.deltaTime, rb.velocity.y);
         /*        transform.position += new Vector3(horiz * speed * Time.deltaTime, 0, 0);*/
+
     }
     public void Bounce()
     {

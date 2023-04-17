@@ -331,7 +331,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7facf80cde2e8249b8a8e0dd2f70dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ball: {fileID: 0}
+  Ball: {fileID: 615643900}
+--- !u!1 &615643900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8942941637412177468, guid: 820cc60bda94583429aeceec178ca939, type: 3}
+  m_PrefabInstance: {fileID: 888112833}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &888112833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -339,12 +344,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8942941637412177466, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: speed
-      value: 750
-      objectReference: {fileID: 0}
     - target: {fileID: 8942941637412177468, guid: 820cc60bda94583429aeceec178ca939, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942941637412177468, guid: 820cc60bda94583429aeceec178ca939, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8942941637412177471, guid: 820cc60bda94583429aeceec178ca939, type: 3}

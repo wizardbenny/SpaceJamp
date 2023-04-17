@@ -6,10 +6,11 @@ public class CamFollow : MonoBehaviour
 {
     [SerializeField] private GameObject Ball;
     private float maxHeight;
+
     // Start is called before the first frame update
     void Start()
     {
-        maxHeight = 0;
+
     }
 
     // Update is called once per frame

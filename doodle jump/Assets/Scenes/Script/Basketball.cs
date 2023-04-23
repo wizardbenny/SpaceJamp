@@ -64,6 +64,7 @@ public class Basketball : MonoBehaviour
     {
         if (collision.gameObject.tag == "Box")
         {
+            if (rb.velocity.y > 0) return;
             isGround = true;
             Bounce();
         }

@@ -9,23 +9,33 @@ public class PlatformGen : MonoBehaviour
     [SerializeField] Vector2 rangeY;
     [SerializeField] int maxPlatform;
     [SerializeField] GameObject platformPrefab;
-    [SerializeField] 
+    [SerializeField] Transform playerTransform;
+    private Vector2 previousPos;
     // Start is called before the first frame update
     void Start()
     {
-        GenPlatform(); 
+        previousPos = transform.position;
+        GenPlatform();     
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        if(playerTransform.position.y > previousPos.y - 10f)
+        {
+            GenPlatform();
+        }
     }
+
     void GenPlatform()
     {
         for (int i = 0; i < maxPlatform; i++) {
-            Vector2 position = new Vector2(Random.Range(1, 5), Random.Range(rangeY.x, rangeY.y));
+            float posX = Random.Range(-6.0f, 6.0f);
+            int posY = (int)previousPos.y + Random.Range((int)rangeY.x, (int)rangeY.y);
+            Vector2 position = new Vector2(posX, posY);
             Instantiate(platformPrefab, position, Quaternion.identity);
+
+            previousPos = position;
         }
     }
 }

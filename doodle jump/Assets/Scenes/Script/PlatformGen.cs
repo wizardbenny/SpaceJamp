@@ -8,7 +8,7 @@ public class PlatformGen : MonoBehaviour
     public int rows = 1;
     [SerializeField] Vector2 rangeY;
     [SerializeField] int maxPlatform;
-    [SerializeField] GameObject platformPrefab;
+    [SerializeField] GameObject[] platformPrefabs;
     [SerializeField] Transform playerTransform;
     private Vector2 previousPos;
     // Start is called before the first frame update
@@ -33,7 +33,9 @@ public class PlatformGen : MonoBehaviour
             float posX = Random.Range(-6.0f, 6.0f);
             int posY = (int)previousPos.y + Random.Range((int)rangeY.x, (int)rangeY.y);
             Vector2 position = new Vector2(posX, posY);
-            Instantiate(platformPrefab, position, Quaternion.identity);
+            Instantiate(platformPrefabs[Random.Range(0, platformPrefabs.Length)], 
+                        position, 
+                        Quaternion.identity);
 
             previousPos = position;
         }

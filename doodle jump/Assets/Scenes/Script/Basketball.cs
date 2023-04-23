@@ -1,28 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Basketball : MonoBehaviour
 {
     private Rigidbody2D rb;
     [SerializeField] private float speed;
     [SerializeField] private float jumpforce;
-
+    [SerializeField] private CamFollow camFollow;
     private bool isGround;
-    private Camera cam;
 
+    public UnityEvent OnPlayerLose;
+
+    private void Awake()
+    {
+    }
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        cam = Camera.main;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        ScreenWrap();
-        
+        if (this.transform.position.y < camFollow.MinY)
+        {
+            OnPlayerLose.Invoke();
+        }
+
     }
 
     private void FixedUpdate()
@@ -39,26 +47,7 @@ public class Basketball : MonoBehaviour
         rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
     }
 
-    void ScreenWrap()
-    {
-        float height = 2f * cam.orthographicSize;
-        float width = height * cam.aspect;
 
-        float minXBound = cam.transform.position.x - width / 2f;
-        float maxXBound = cam.transform.position.x + width / 2f;
-
-        float minY = cam.transform.position.y - height / 2f;
-
-        if (transform.position.x > maxXBound)
-        {
-            transform.position = new Vector2(minXBound, transform.position.y);
-        }
-        else if (transform.position.x < minXBound)
-        {
-            transform.position = new Vector2(maxXBound, transform.position.y);
-        }
-
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

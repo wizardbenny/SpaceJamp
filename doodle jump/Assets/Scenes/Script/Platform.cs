@@ -8,7 +8,7 @@ public class Platform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        camFollow = FindFirstObjectByType<CamFollow>();
+        camFollow = FindObjectOfType<CamFollow>();
     }
 
     // Update is called once per frame

@@ -33,8 +33,8 @@ public class PlatformGen : MonoBehaviour
             float posX = Random.Range(-6.0f, 6.0f);
             int posY = (int)previousPos.y + Random.Range((int)rangeY.x, (int)rangeY.y);
             Vector2 position = new Vector2(posX, posY);
-            Instantiate(platformPrefabs[Random.Range(0, platformPrefabs.Length)], 
-                        position, 
+            Instantiate(platformPrefabs[Random.Range(0, platformPrefabs.Length)],
+                        position,
                         Quaternion.identity);
 
             previousPos = position;

@@ -47,5 +47,6 @@ MonoBehaviour:
   rows: 1
   rangeY: {x: 1, y: 6}
   maxPlatform: 10
-  platformPrefab: {fileID: 4140363362788401527, guid: 6506b3b80247f6845b31b3be96900b52, type: 3}
+  platformPrefabs:
+  - {fileID: 4140363362788401527, guid: 6506b3b80247f6845b31b3be96900b52, type: 3}
   playerTransform: {fileID: 0}

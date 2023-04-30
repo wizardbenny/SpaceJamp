@@ -14,9 +14,9 @@ public class Platform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this.transform.position.y < camFollow.MinY)
-        {
-            Destroy(this.gameObject);
-        }
+        //if(this.transform.position.y < camFollow.MinY)
+        //{
+        //    Destroy(this.gameObject);
+        //}
     }
 }

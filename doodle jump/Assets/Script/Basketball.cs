@@ -58,5 +58,10 @@ public class Basketball : MonoBehaviour
             Bounce();
         }
     }
+
+    public bool IsFalling()
+    {
+        return rb.velocity.y < 0;
+    }
 }
 

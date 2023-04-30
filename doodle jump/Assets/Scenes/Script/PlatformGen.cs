@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,8 +10,15 @@ public class PlatformGen : MonoBehaviour
     [SerializeField] Vector2 rangeY;
     [SerializeField] int maxPlatform;
     [SerializeField] GameObject[] platformPrefabs;
+    [SerializeField] GameObject[] enemyPrefabs;
+
     [SerializeField] Transform playerTransform;
+    
+    [SerializeField] [Range(0f, 1f)]
+    private float enemySpawnRate = 0.1f;
+
     private Vector2 previousPos;
+    private Vector2 offset = new Vector2(0, 1f);
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +45,14 @@ public class PlatformGen : MonoBehaviour
                         position,
                         Quaternion.identity);
 
+            if(Random.Range(0f, 1f) <= enemySpawnRate) GenerateEnemy(position);
             previousPos = position;
         }
+    }
+
+    void GenerateEnemy(Vector2 platformPos)
+    {
+        int randIndx = Random.Range(0, enemyPrefabs.Length);
+        Instantiate(enemyPrefabs[randIndx], platformPos + offset, Quaternion.identity);
     }
 }

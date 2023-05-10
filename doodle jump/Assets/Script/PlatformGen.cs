@@ -53,6 +53,10 @@ public class PlatformGen : MonoBehaviour
     void GenerateEnemy(Vector2 platformPos)
     {
         int randIndx = Random.Range(0, enemyPrefabs.Length);
+        if (enemyPrefabs.Length == 0)
+        {
+            return;
+        }
         Instantiate(enemyPrefabs[randIndx], platformPos + offset, Quaternion.identity);
     }
 }

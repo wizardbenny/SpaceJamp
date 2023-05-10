@@ -11,7 +11,9 @@ public class CamFollow : MonoBehaviour
     
     public float MinY { get { return minY; } }
     private float minY;
+    public float MaxX { get { return maxX; } }
     private float maxX;
+    public float MinX { get { return minX; } }
     private float minX;
 
     // Start is called before the first frame update

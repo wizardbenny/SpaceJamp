@@ -43,8 +43,10 @@ public class Basketball : MonoBehaviour
     public void Bounce()
     {
         //if (!isGround) return;
-        
-        rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
+        Vector2 velocity = rb.velocity;
+        velocity.y = jumpforce;
+        rb.velocity = velocity;
+        //rb.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
     }
 
 
@@ -53,7 +55,7 @@ public class Basketball : MonoBehaviour
     {
         if (collision.gameObject.tag == "Box")
         {
-            if (rb.velocity.y > 0) return;
+            if (collision.relativeVelocity.y < 0) return;
             isGround = true;
             Bounce();
         }

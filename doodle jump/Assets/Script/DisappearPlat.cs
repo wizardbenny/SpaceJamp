@@ -31,7 +31,7 @@ public class DisappearPlat : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            bool isFall = collision.gameObject.GetComponent<Basketball>().IsFalling();
+            bool isFall = collision.relativeVelocity.y <= 0;
             if (isFall)
             {
                 StartCoroutine(Fading());

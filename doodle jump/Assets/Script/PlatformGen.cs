@@ -13,7 +13,8 @@ public class PlatformGen : MonoBehaviour
     [SerializeField] GameObject[] enemyPrefabs;
 
     [SerializeField] Transform playerTransform;
-    
+    [SerializeField] private CamFollow cameraFollow;
+
     [SerializeField] [Range(0f, 1f)]
     private float enemySpawnRate = 0.1f;
 
@@ -22,6 +23,10 @@ public class PlatformGen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(cameraFollow == null) 
+        {
+            cameraFollow = FindObjectOfType<CamFollow>();
+        }
         previousPos = transform.position;
         GenPlatform();     
     }
@@ -38,7 +43,7 @@ public class PlatformGen : MonoBehaviour
     void GenPlatform()
     {
         for (int i = 0; i < maxPlatform; i++) {
-            float posX = Random.Range(-6.0f, 6.0f);
+            float posX = Random.Range(cameraFollow.MinX, cameraFollow.MaxX);
             int posY = (int)previousPos.y + Random.Range((int)rangeY.x, (int)rangeY.y);
             Vector2 position = new Vector2(posX, posY);
             Instantiate(platformPrefabs[Random.Range(0, platformPrefabs.Length)],

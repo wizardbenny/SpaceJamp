@@ -8,7 +8,6 @@ public class CamFollow : MonoBehaviour
     private float maxHeight;
     private Camera cam;
 
-    
     public float MinY { get { return minY; } }
     private float minY;
     public float MaxX { get { return maxX; } }
@@ -16,21 +15,22 @@ public class CamFollow : MonoBehaviour
     public float MinX { get { return minX; } }
     private float minX;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         cam = Camera.main;
+        CalculateCamBound();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         maxHeight = Mathf.Max(maxHeight, Ball.transform.position.y);
         transform.position = new Vector3(transform.position.x, maxHeight, transform.position.z);
+        CalculateCamBound();
         ScreenWrap();
     }
 
-    void ScreenWrap()
+    void CalculateCamBound()
     {
         float height = 2f * cam.orthographicSize;
         float width = height * cam.aspect;
@@ -40,17 +40,20 @@ public class CamFollow : MonoBehaviour
 
         float minY = cam.transform.position.y - height / 2f;
 
-        if (transform.position.x > maxXBound)
-        {
-            transform.position = new Vector2(minXBound, transform.position.y);
-        }
-        else if (transform.position.x < minXBound)
-        {
-            transform.position = new Vector2(maxXBound, transform.position.y);
-        }
-
         this.minX = minXBound;
         this.maxX = maxXBound;
         this.minY = minY;
+    }
+    void ScreenWrap()
+    {
+
+        if (transform.position.x > this.MaxX)
+        {
+            transform.position = new Vector2(this.minX, transform.position.y);
+        }
+        else if (transform.position.x < this.minX)
+        {
+            transform.position = new Vector2(this.maxX, transform.position.y);
+        }
     }
 }

@@ -14,12 +14,15 @@ public class PlatformGen : MonoBehaviour
 
     [SerializeField] Transform playerTransform;
     [SerializeField] private CamFollow cameraFollow;
+    [SerializeField] private GameObject portal;
 
     [SerializeField] [Range(0f, 1f)]
     private float enemySpawnRate = 0.1f;
+    private int maxPortal = 1;
 
     private Vector2 previousPos;
     private Vector2 offset = new Vector2(0, 1f);
+    [SerializeField] private float portalSpawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +40,11 @@ public class PlatformGen : MonoBehaviour
         if(playerTransform.position.y > previousPos.y - 10f)
         {
             GenPlatform();
+        }
+        if(playerTransform.position.y >= portalSpawn &&  maxPortal == 1)
+        {
+            Instantiate(portal, new Vector3(0, playerTransform.position.y + 15, 0),Quaternion.identity);
+            maxPortal = 0;
         }
     }
 

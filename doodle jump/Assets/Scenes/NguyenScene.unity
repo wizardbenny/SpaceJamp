@@ -875,70 +875,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8942941637412177464, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942941637412177465, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: ccf722a10ed8b7e438b64d220695287b, type: 2}
-    - target: {fileID: 8942941637412177465, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942941637412177465, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: m_GravityScale
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942941637412177465, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942941637412177466, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: speed
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 8942941637412177466, guid: 820cc60bda94583429aeceec178ca939, type: 3}
       propertyPath: camFollow
       value: 
       objectReference: {fileID: 519420033}
-    - target: {fileID: 8942941637412177466, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: jumpforce
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942941637412177466, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: OnPlayerLose.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942941637412177466, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: OnPlayerLose.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942941637412177466, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: OnPlayerLose.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1366924055}
-    - target: {fileID: 8942941637412177466, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: OnPlayerLose.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942941637412177466, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: OnPlayerLose.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942941637412177466, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: OnPlayerLose.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942941637412177466, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: OnPlayerLose.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942941637412177466, guid: 820cc60bda94583429aeceec178ca939, type: 3}
-      propertyPath: OnPlayerLose.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8942941637412177468, guid: 820cc60bda94583429aeceec178ca939, type: 3}
       propertyPath: m_Name
       value: Player

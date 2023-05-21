@@ -5,6 +5,7 @@ using UnityEngine;
 public class CamFollow : MonoBehaviour
 {
     [SerializeField] private GameObject Ball;
+    [SerializeField] private bool isFollow = true;
     private float maxHeight;
     private Camera cam;
 
@@ -24,8 +25,12 @@ public class CamFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        maxHeight = Mathf.Max(maxHeight, Ball.transform.position.y);
-        transform.position = new Vector3(transform.position.x, maxHeight, transform.position.z);
+        if (isFollow)
+        {
+            maxHeight = Mathf.Max(maxHeight, Ball.transform.position.y);
+            transform.position = new Vector3(transform.position.x, maxHeight, transform.position.z);
+        }
+
         CalculateCamBound();
         ScreenWrap();
     }

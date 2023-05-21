@@ -8,12 +8,14 @@ public class MovingPlat : MonoBehaviour
     [SerializeField] private bool lOrR;
     [SerializeField] private float changeDirTime;
     private CamFollow camFollow;
-    Vector3 dir = Vector3.right;
+    private Vector3 dir;
+
     private float elapsedTime;
     // Start is called before the first frame update
     void Start()
     {
         camFollow = FindObjectOfType<CamFollow>();
+        dir = Random.value > 0.5f ? Vector2.right : Vector2.left;
     }
 
     // Update is called once per frame

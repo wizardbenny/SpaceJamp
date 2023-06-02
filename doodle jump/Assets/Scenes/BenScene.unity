@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ball: {fileID: 615643900}
+  isFollow: 1
 --- !u!1 &615643900 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8942941637412177468, guid: 820cc60bda94583429aeceec178ca939, type: 3}
@@ -373,17 +374,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 109086678343296602, guid: b9aae9cb81608aa40b65e660f08a3bb8, type: 3}
+      propertyPath: portal
+      value: 
+      objectReference: {fileID: 3171249964560241440, guid: 3a8e3b24a6be3dc469c540d6533c1254, type: 3}
+    - target: {fileID: 109086678343296602, guid: b9aae9cb81608aa40b65e660f08a3bb8, type: 3}
+      propertyPath: rangeY.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 109086678343296602, guid: b9aae9cb81608aa40b65e660f08a3bb8, type: 3}
+      propertyPath: portalSpawn
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 109086678343296602, guid: b9aae9cb81608aa40b65e660f08a3bb8, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 615643906}
     - target: {fileID: 109086678343296602, guid: b9aae9cb81608aa40b65e660f08a3bb8, type: 3}
       propertyPath: platformPrefabs.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 109086678343296602, guid: b9aae9cb81608aa40b65e660f08a3bb8, type: 3}
       propertyPath: platformPrefabs.Array.data[1]
       value: 
       objectReference: {fileID: 6800360704268469007, guid: 87befb1c82868eb4181cfc6cb80c07df, type: 3}
+    - target: {fileID: 109086678343296602, guid: b9aae9cb81608aa40b65e660f08a3bb8, type: 3}
+      propertyPath: platformPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 8315481862138922100, guid: f81c94297973b62448ee6d93443cd876, type: 3}
+    - target: {fileID: 109086678343296602, guid: b9aae9cb81608aa40b65e660f08a3bb8, type: 3}
+      propertyPath: platformPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 4716194690411579953, guid: 4565c18d37528424b8ccf0378ea2c1f0, type: 3}
     - target: {fileID: 540309470909762593, guid: b9aae9cb81608aa40b65e660f08a3bb8, type: 3}
       propertyPath: m_Name
       value: PlatformGen

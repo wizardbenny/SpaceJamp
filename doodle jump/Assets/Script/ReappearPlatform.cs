@@ -33,6 +33,6 @@ public class ReappearPlatform : DisappearPlat
             this.gameObject.GetComponent<SpriteRenderer>().color = currentColor;
             yield return new WaitForEndOfFrame();
         }
-        maxre = 0;
+        maxre = false;
     }
 } 

@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BenScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/BossScene.unity
+    guid: d1a1a71fc45d23a4a82dd8d23bb761df
   m_configObjects: {}

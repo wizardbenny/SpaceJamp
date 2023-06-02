@@ -5,10 +5,10 @@ using UnityEngine;
 public class DisappearPlat : MonoBehaviour
 {
     // Start is called before the first frame update
-    private Color currentColor;
+    protected Color currentColor;
     private bool touchPlayer;
 
-    void Start()
+    public virtual void Start()
     {
         currentColor = this.gameObject.GetComponent<SpriteRenderer>().color;
 
@@ -40,5 +40,6 @@ public class DisappearPlat : MonoBehaviour
             this.gameObject.GetComponent<SpriteRenderer>().color = currentColor;
             yield return new WaitForEndOfFrame();
         }
+        this.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
     }
 }

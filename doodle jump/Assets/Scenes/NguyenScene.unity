@@ -451,6 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ball: {fileID: 1870470320}
+  isFollow: 1
 --- !u!1 &654149371
 GameObject:
   m_ObjectHideFlags: 0

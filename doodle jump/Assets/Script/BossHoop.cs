@@ -9,6 +9,8 @@ public class BossHoop : MonoBehaviour
     [SerializeField] private float speed = 0.001f;
 
     [SerializeField] private float MAX_TIME = 3;
+    [SerializeField] private ParticleSystem hoopParticle;
+
     private float timeElapsed;
     private Vector3 dir = Vector3.right;
 
@@ -48,7 +50,7 @@ public class BossHoop : MonoBehaviour
 
     private void PlayParticle()
     {
-
+        hoopParticle.Play();
     }
 
     private void Movement()

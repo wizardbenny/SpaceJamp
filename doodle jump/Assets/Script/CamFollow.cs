@@ -52,13 +52,21 @@ public class CamFollow : MonoBehaviour
     void ScreenWrap()
     {
 
-        if (transform.position.x > this.MaxX)
+        float height = 2f * cam.orthographicSize;
+        float width = height * cam.aspect;
+
+        float minXBound = cam.transform.position.x - width / 2f;
+        float maxXBound = cam.transform.position.x + width / 2f;
+
+        float minY = cam.transform.position.y - height / 2f;
+
+        if (transform.position.x > maxXBound)
         {
-            transform.position = new Vector2(this.minX, transform.position.y);
+            transform.position = new Vector2(minXBound, transform.position.y);
         }
-        else if (transform.position.x < this.minX)
+        else if (transform.position.x < minXBound)
         {
-            transform.position = new Vector2(this.maxX, transform.position.y);
+            transform.position = new Vector2(maxXBound, transform.position.y);
         }
     }
 }
